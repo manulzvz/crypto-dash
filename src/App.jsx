@@ -26,6 +26,19 @@ const App = () => {
   return ( 
     <div>
       <h1>🚀 Crypto Dash</h1>
+      {loading && <p>Loading...</p>}
+      {error && <div className="error">{error}</div>}
+      {!loading && !error && (
+        <main className="grid">
+          {coints.map((coin)=>(
+            <div className="coin-card" key={coin.id}>
+              <div className="coin-header">
+                <img src={coin.image} alt={coin.name} className="coin-image" />
+              </div>
+            </div>
+          ))}
+        </main>
+      )}
     </div>
    );
 }
