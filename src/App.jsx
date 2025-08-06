@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-const API_URL = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cup_desc&per_page=10&page=1&sparkline=false';
+import CoinCard from "./components/CoinCard";
+const API_URL =
+  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cup_desc&per_page=10&page=1&sparkline=false";
 
 const App = () => {
   const [coints, setCoins] = useState([]);
@@ -10,37 +12,33 @@ const App = () => {
     const fetchCoins = async () => {
       try {
         const res = await fetch(API_URL);
-        if(!res.ok) throw new Error("Failed to fetch data");
+        if (!res.ok) throw new Error("Failed to fetch data");
         const data = await res.json();
         console.log(data);
         setCoins(data);
       } catch (err) {
-        setError(err.message)
+        setError(err.message);
       } finally {
         setLoading(false);
       }
-    }
+    };
     fetchCoins();
   }, []);
 
-  return ( 
+  return (
     <div>
       <h1>🚀 Crypto Dash</h1>
       {loading && <p>Loading...</p>}
       {error && <div className="error">{error}</div>}
       {!loading && !error && (
         <main className="grid">
-          {coints.map((coin)=>(
-            <div className="coin-card" key={coin.id}>
-              <div className="coin-header">
-                <img src={coin.image} alt={coin.name} className="coin-image" />
-              </div>
-            </div>
+          {coints.map((coin) => (
+            <CoinCard key={coin.id} coin={coin} />
           ))}
         </main>
       )}
     </div>
-   );
-}
- 
+  );
+};
+
 export default App;
