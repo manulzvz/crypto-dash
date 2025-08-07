@@ -46,10 +46,10 @@ const CoinChart = ({ coinId }) => {
             label: "Price (USD)",
             data: prices,
             fill: true,
-            borderColor: #007bff,
+            borderColor: "#007bff",
             backgroundColor: "rgba(0, 123, 255, 0.1)",
             poinRadius: 0,
-            tension: 0.3
+            tension: 0.3,
           },
         ],
       });
@@ -59,7 +59,39 @@ const CoinChart = ({ coinId }) => {
     fetchPrices();
   }, [coinId]);
 
-  return <>Chart</>;
+  if (loading) return <p>Loading Chart...</p>;
+
+  return (
+    <div style={{ marginTop: "30px" }}>
+      <Line
+        data={chartData}
+        options={{
+          responsive: true,
+          plugins: {
+            legend: { display: false }, // Hide the legend
+            tooltip: { mode: "index", intersect: false }, // Tooltip appears when hovering near a point
+          },
+          scales: {
+            x: {
+              type: "time", // Uses date-based axis
+              time: {
+                unit: "day", // Each tick on the axis represents a day
+              },
+              ticks: {
+                autoSkip: true, // Skip ticks if there are too many
+                maxTicksLimit: 7, // Show at most 7 ticks
+              },
+            },
+            y: {
+              ticks: {
+                callback: (value) => `$${value.toLocaleString()}`, // Format numbers like $25,000
+              },
+            },
+          },
+        }}
+      />
+    </div>
+  );
 };
 
 export default CoinChart;
