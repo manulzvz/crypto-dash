@@ -1,10 +1,30 @@
 # Crypto Dash
 
-A responsive dashboard built with React and Vite that fetches real‑time cryptocurrency market data from the CoinGecko API and visualizes price trends.
+[![State](https://img.shields.io/badge/state-experimental-yellow)](https://github.com/manulzvz/crypto-dash)
+[![Last Commit](https://img.shields.io/github/last-commit/manulzvz/crypto-dash)](https://github.com/manulzvz/crypto-dash/commits/main)
+[![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
+A responsive dashboard built with React and Vite that fetches real‑time cryptocurrency market data from the CoinGecko API and visualizes price trends..
 
 ---
 
-## Features
+## Table of Contents
+
+- [Crypto Dash](#crypto-dash)
+  - [Table of Contents](#table-of-contents)
+  - [Description](#description)
+  - [Technologies](#technologies)
+  - [Installation](#installation)
+  - [Run Project](#run-project)
+  - [Demo](#demo)
+  - [Project Structure](#project-structure)
+  - [Contributions](#contributions)
+  - [Project Status](#project-status)
+  - [Contact](#contact)
+
+---
+
+## Description
 
 - **Real‑time API Integration**: Fetches live market data (prices, market cap, 24h change) using the CoinGecko REST API.
 - **React Hooks**: Utilizes `useState` and `useEffect` for state management and side effects.
@@ -16,83 +36,83 @@ A responsive dashboard built with React and Vite that fetches real‑time crypto
 
 ---
 
-## Tech Stack
+## Technologies
 
-- **Framework**: React
-- **Bundler**: Vite
-- **Charts**: Chart.js & react-chartjs-2
-- **API**: CoinGecko REST API
-- **Deployment**: Vercel
+- **Frontend:** React
+- **Styles:** TailwindCSS
+- **Backend / API:** CoinGecko REST API
+- **Tools:** Git, Prettier, Vite
 
 ---
 
 ## Installation
 
-1. **Clone the repository**
+```bash
+# Clone repository
+git clone https://github.com/manulzvz/crypto-dash.git
 
-   ```bash
-   git clone https://github.com/manulzvz/crypto-dash.git
-   cd crypto-dash
-   ```
+# Enter to directory
+cd crypto-dash
 
-2. **Install dependencies**
+# Install dependencies
+npm install
 
-   ```bash
-   npm install
-   ```
-
-3. **Set environment variable**
-
-   Create a `.env` file in the project root and add your API URL:
-
-   ```bash
+# Set environment variable
+# Create a .env file in the project root and add your API URL:
    VITE_API_URL=https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false
-   ```
+```
 
-4. **Start the development server**
+## Run Project
 
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
----
+## Demo
 
-## Usage
+Try it live on: [https://crypto-dash-two-liart.vercel.app](https://crypto-dash-two-liart.vercel.app)
 
-- Open your browser at `http://localhost:5173` (or the URL shown in your terminal).
-- Browse the list of top 10 cryptocurrencies by market cap.
-- Click on a coin to view its price trend chart.
+## Project Structure
 
----
+```text
+crypto-dash/
+├── src/
+│   ├── components/
+│   │   ├── ...
+│   ├── pages/
+│   │   ├── ...
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── public/
+├── eslint.config.js
+├── index.html
+├── README.md
+├── vite.config.js
+└── package.json
+```
 
-## Live Demo
+## Contributions
 
-Try it live on Vercel: [https://crypto-dash-two-liart.vercel.app](https://crypto-dash-two-liart.vercel.app)
+1. Fork the repository
+2. Create a feature/new-feature branch
+3. Commit your changes
+4. Open a Pull Request
 
----
+## Project Status
 
-## Scripts
+- In development
 
-| Command           | Description                  |
-| ----------------- | ---------------------------- |
-| `npm run dev`     | Start development server     |
-| `npm run build`   | Build for production         |
-| `npm run preview` | Preview the production build |
+- Experimental
 
----
+- Stable
 
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature/my-feature`.
-3. Commit your changes: `git commit -m 'Add my feature'`.
-4. Push to the branch: `git push origin feature/my-feature`.
-5. Open a pull request.
-
----
+- Prototype
 
 ## Contact
 
-Manuel López – [GitHub](https://github.com/manulzvz) – [manuel@example.com](mailto:manuel@example.com)
+GitHub: [manulzvz](https://github.com/manulzvz)
+
+LinkedIn: [manulzvz](https://www.linkedin.com/in/manulzvz/)
+
+Email: <manulzvz@gmail.com>
