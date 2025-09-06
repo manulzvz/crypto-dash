@@ -101,13 +101,7 @@ crypto-dash/
 
 ## Project Status
 
-- In development
-
 - Experimental
-
-- Stable
-
-- Prototype
 
 ## Contact
 
